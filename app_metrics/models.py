@@ -6,7 +6,6 @@ from django.utils.translation import ugettext_lazy as _
 
 #from app_metrics.compat import User
 from app_metrics.compat import UserModel
-User = UserModel()
 
 class Metric(models.Model):
     """ The type of metric we want to store """
@@ -38,7 +37,7 @@ class MetricSet(models.Model):
     """ A set of metrics that should be sent via email to certain users """
     name = models.CharField(_('name'), max_length=50)
     metrics = models.ManyToManyField(Metric, verbose_name=_('metrics'))
-    email_recipients = models.ManyToManyField(User, verbose_name=_('email recipients'))
+    email_recipients = models.ManyToManyField(UserModel(), verbose_name=_('email recipients'))
     no_email = models.BooleanField(_('no e-mail'), default=False)
     send_daily = models.BooleanField(_('send daily'), default=True)
     send_weekly = models.BooleanField(_('send weekly'), default=False)
