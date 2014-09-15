@@ -4,7 +4,9 @@ from south.db import db
 from south.v2 import SchemaMigration
 from django.db import models
 
-from app_metrics.compat import AUTH_USER_MODEL
+#from app_metrics.compat import AUTH_USER_MODEL
+from app_metrics.compat import UserModelString
+AUTH_USER_MODEL = UserModelString()
 
 
 class Migration(SchemaMigration):

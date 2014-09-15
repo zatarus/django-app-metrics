@@ -4,8 +4,9 @@ from django.db import models, IntegrityError
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext_lazy as _
 
-from app_metrics.compat import User
-
+#from app_metrics.compat import User
+from app_metrics.compat import UserModel
+User = UserModel()
 
 class Metric(models.Model):
     """ The type of metric we want to store """
