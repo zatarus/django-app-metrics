@@ -15,7 +15,7 @@ setup(
     long_description=readme,
     author='Frank Wiles',
     author_email='frank@revsys.com',
-    url='https://github.com/frankwiles/django-app-metrics',
+    url='https://github.com/zatarus/django-app-metrics',
     packages=find_packages(),
     package_data={
         'app_metrics': [
@@ -24,7 +24,6 @@ setup(
     },
     install_requires = [
         'celery',
-        'django-celery',
     ],
     tests_require = ['mock', 'django-coverage', 'coverage'],
     classifiers=[
